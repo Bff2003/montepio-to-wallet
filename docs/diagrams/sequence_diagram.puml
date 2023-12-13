@@ -1,0 +1,21 @@
+@startuml SequenceDiagramHighLevel
+!theme cerulean
+
+participant Montepio as montepio
+actor User as user
+participant "Script" as program
+participant "Wallet" as wallet
+
+activate montepio
+montepio -> user: Send email with all transactions
+deactivate montepio
+
+activate user
+program -> user: Get email with all transactions
+deactivate user
+
+activate program
+program -> wallet: Add transactions to wallet
+deactivate program
+activate wallet
+@enduml
